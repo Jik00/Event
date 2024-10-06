@@ -89,37 +89,42 @@ class EventHomePage extends StatelessWidget {
         return AlertDialog(
           backgroundColor: Colors.white,
           title: Text('Add New Event', style: TextStyle(color: Colors.black)),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                  labelText: 'Event Name',
-                  labelStyle: TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(),
-                ),
-                onChanged: (value) {
-                  eventName = value;
-                },
+          content: SingleChildScrollView( // Allows scrolling if content overflows
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.9), // Responsive width
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextField(
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      labelText: 'Event Name',
+                      labelStyle: TextStyle(color: Colors.grey),
+                      border: OutlineInputBorder(),
+                    ),
+                    onChanged: (value) {
+                      eventName = value;
+                    },
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
+                    onPressed: () async {
+                      final DateTime? picked = await showDatePicker(
+                        context: context,
+                        initialDate: selectedDate,
+                        firstDate: DateTime.now(),
+                        lastDate: DateTime(2101),
+                      );
+                      if (picked != null && picked != selectedDate) {
+                        selectedDate = picked;
+                      }
+                    },
+                    child: Text('Select Date', style: TextStyle(color: Colors.white)),
+                  ),
+                ],
               ),
-              SizedBox(height: 10),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
-                onPressed: () async {
-                  final DateTime? picked = await showDatePicker(
-                    context: context,
-                    initialDate: selectedDate,
-                    firstDate: DateTime.now(),
-                    lastDate: DateTime(2101),
-                  );
-                  if (picked != null && picked != selectedDate) {
-                    selectedDate = picked;
-                  }
-                },
-                child: Text('Select Date', style: TextStyle(color: Colors.white)),
-              ),
-            ],
+            ),
           ),
           actions: [
             ElevatedButton(
@@ -148,38 +153,43 @@ class EventHomePage extends StatelessWidget {
         return AlertDialog(
           backgroundColor: Colors.white,
           title: Text('Edit Event', style: TextStyle(color: Colors.black)),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: TextEditingController(text: eventName),
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                  labelText: 'Event Name',
-                  labelStyle: TextStyle(color: Colors.grey),
-                  border: OutlineInputBorder(),
-                ),
-                onChanged: (value) {
-                  updatedName = value;
-                },
+          content: SingleChildScrollView( // Allows scrolling if content overflows
+            child: ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.9), // Responsive width
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  TextField(
+                    controller: TextEditingController(text: eventName),
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      labelText: 'Event Name',
+                      labelStyle: TextStyle(color: Colors.grey),
+                      border: OutlineInputBorder(),
+                    ),
+                    onChanged: (value) {
+                      updatedName = value;
+                    },
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
+                    onPressed: () async {
+                      final DateTime? picked = await showDatePicker(
+                        context: context,
+                        initialDate: selectedDate,
+                        firstDate: DateTime.now(),
+                        lastDate: DateTime(2101),
+                      );
+                      if (picked != null && picked != selectedDate) {
+                        selectedDate = picked;
+                      }
+                    },
+                    child: Text('Select Date', style: TextStyle(color: Colors.white)),
+                  ),
+                ],
               ),
-              SizedBox(height: 10),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
-                onPressed: () async {
-                  final DateTime? picked = await showDatePicker(
-                    context: context,
-                    initialDate: selectedDate,
-                    firstDate: DateTime.now(),
-                    lastDate: DateTime(2101),
-                  );
-                  if (picked != null && picked != selectedDate) {
-                    selectedDate = picked;
-                  }
-                },
-                child: Text('Select Date', style: TextStyle(color: Colors.white)),
-              ),
-            ],
+            ),
           ),
           actions: [
             ElevatedButton(
