@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class EventAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const EventAppBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(
+      title: const Text(
         'Event Countdown',
          style: TextStyle(
           fontFamily: 'Poppins',
@@ -18,5 +20,5 @@ class EventAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

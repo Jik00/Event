@@ -8,7 +8,7 @@ class EventCard extends StatelessWidget {
   final VoidCallback onEdit;
   final VoidCallback onDelete;
 
-  EventCard({
+  const EventCard({super.key, 
     required this.eventName,
     required this.eventDate,
     required this.countdown,
@@ -23,7 +23,7 @@ class EventCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -33,31 +33,31 @@ class EventCard extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(15),
         ),
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               eventName,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             Text(
               countdown,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 18, color: Colors.white70, fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               'Event Date: ${DateFormat('yyyy-MM-dd').format(eventDate)}',
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 14, color: Colors.white70, fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -70,9 +70,9 @@ class EventCard extends StatelessWidget {
                       borderRadius:
                           BorderRadius.circular(20), // Rounded corners
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(Icons.edit, color: Colors.teal),
                       SizedBox(width: 5),
@@ -80,7 +80,7 @@ class EventCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 ElevatedButton(
                   onPressed: onDelete,
                   style: ElevatedButton.styleFrom(
@@ -90,9 +90,9 @@ class EventCard extends StatelessWidget {
                       borderRadius:
                           BorderRadius.circular(20), // Rounded corners
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
                   ),
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(Icons.delete, color: Colors.white),
                       SizedBox(width: 5),

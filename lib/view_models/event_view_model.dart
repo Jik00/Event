@@ -13,11 +13,12 @@ class EventViewModel extends ChangeNotifier {
   List<Event> get events => List.unmodifiable(_events);
 
   void _startTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       notifyListeners();
     });
   }
 
+  @override
   void dispose() {
     _timer?.cancel();
     super.dispose();

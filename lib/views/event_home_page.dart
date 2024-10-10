@@ -8,12 +8,14 @@ import '../widgets/event_button.dart';
 import '../widgets/edit_event_dialog.dart'; // Import this to use the dialog function
 
 class EventHomePage extends StatelessWidget {
+  const EventHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => EventViewModel(),
       child: Scaffold(
-        appBar: EventAppBar(),
+        appBar: const EventAppBar(),
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Consumer<EventViewModel>(

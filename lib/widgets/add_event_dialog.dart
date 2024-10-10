@@ -10,14 +10,14 @@ void showAddEventDialog(BuildContext context, EventViewModel eventViewModel) {
     builder: (context) {
       return AlertDialog(
         backgroundColor: Colors.white,
-        title: Text('Add New Event', style: TextStyle(color: Colors.black)),
+        title: const Text('Add New Event', style: TextStyle(color: Colors.black)),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
+                style: const TextStyle(color: Colors.black),
+                decoration: const InputDecoration(
                   labelText: 'Event Name',
                   labelStyle: TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(),
@@ -26,7 +26,7 @@ void showAddEventDialog(BuildContext context, EventViewModel eventViewModel) {
                   eventName = value;
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
                 onPressed: () async {
@@ -40,7 +40,7 @@ void showAddEventDialog(BuildContext context, EventViewModel eventViewModel) {
                     selectedDate = picked;
                   }
                 },
-                child: Text('Select Date', style: TextStyle(color: Colors.white)),
+                child: const Text('Select Date', style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
@@ -54,7 +54,7 @@ void showAddEventDialog(BuildContext context, EventViewModel eventViewModel) {
               Navigator.of(context).pop();
             },
             style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
-            child: Text('Add', style: TextStyle(color: Colors.white)),
+            child: const Text('Add', style: TextStyle(color: Colors.white)),
           ),
         ],
       );

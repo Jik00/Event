@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class EventButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const EventButton({Key? key, required this.onPressed}) : super(key: key);
+  const EventButton({super.key, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class EventButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.teal,
           foregroundColor: Colors.white,
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
@@ -21,7 +21,7 @@ class EventButton extends StatelessWidget {
           shadowColor: Colors.tealAccent.withOpacity(0.5),
         ),
         onPressed: onPressed,
-        child: Text(
+        child: const Text(
           'Add Event',
           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),

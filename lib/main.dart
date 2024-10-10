@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'local_notification_service/local_notification_service.dart';
 import 'views/event_home_page.dart';
 
-void main() {
-  runApp(EventCountdownApp());
+void main() async {
+  // call the notification
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalNotificationService.init();
+  runApp(const EventCountdownApp());
 }
 
 class EventCountdownApp extends StatelessWidget {
+  const EventCountdownApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,12 +21,12 @@ class EventCountdownApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.teal,
         scaffoldBackgroundColor: Colors.white,
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.black87, fontFamily: 'Poppins'),
-          bodyText2: TextStyle(color: Colors.black54, fontFamily: 'Poppins'),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.black87, fontFamily: 'Poppins'),
+          bodyMedium: TextStyle(color: Colors.black54, fontFamily: 'Poppins'),
         ),
       ),
-      home: EventHomePage(),
+      home: const EventHomePage(),
     );
   }
 }

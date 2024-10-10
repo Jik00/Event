@@ -10,15 +10,15 @@ void showEditEventDialog(BuildContext context, EventViewModel eventViewModel, in
     builder: (context) {
       return AlertDialog(
         backgroundColor: Colors.white,
-        title: Text('Edit Event', style: TextStyle(color: Colors.black)),
+        title: const Text('Edit Event', style: TextStyle(color: Colors.black)),
         content: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
                 controller: TextEditingController(text: eventName),
-                style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(
+                style: const TextStyle(color: Colors.black),
+                decoration: const InputDecoration(
                   labelText: 'Event Name',
                   labelStyle: TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(),
@@ -27,7 +27,7 @@ void showEditEventDialog(BuildContext context, EventViewModel eventViewModel, in
                   updatedName = value;
                 },
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
                 onPressed: () async {
@@ -41,7 +41,7 @@ void showEditEventDialog(BuildContext context, EventViewModel eventViewModel, in
                     selectedDate = picked;
                   }
                 },
-                child: Text('Select Date', style: TextStyle(color: Colors.white)),
+                child: const Text('Select Date', style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
@@ -55,7 +55,7 @@ void showEditEventDialog(BuildContext context, EventViewModel eventViewModel, in
               Navigator.of(context).pop();
             },
             style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
-            child: Text('Update', style: TextStyle(color: Colors.white)),
+            child: const Text('Update', style: TextStyle(color: Colors.white)),
           ),
         ],
       );

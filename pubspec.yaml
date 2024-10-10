@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_local_notifications: ^17.2.3
   flutter_svg: ^2.0.10+1    
   intl: ^0.18.0 # You can specify a version or leave it as `any` to get the latest version
   provider: ^6.1.2 # Add this line for provider package
