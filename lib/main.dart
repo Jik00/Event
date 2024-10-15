@@ -15,18 +15,18 @@ class EventCountdownApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Event Countdown',
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.teal,
-        scaffoldBackgroundColor: Colors.white,
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: Colors.black87, fontFamily: 'Poppins'),
-          bodyMedium: TextStyle(color: Colors.black54, fontFamily: 'Poppins'),
+        debugShowCheckedModeBanner: false,
+        title: 'Event Countdown',
+        theme: ThemeData(
+          brightness: Brightness.light,
+          primarySwatch: Colors.teal,
+          scaffoldBackgroundColor: Colors.white,
+          textTheme: const TextTheme(
+            bodyLarge: TextStyle(color: Colors.black87, fontFamily: 'Poppins'),
+            bodyMedium: TextStyle(color: Colors.black54, fontFamily: 'Poppins'),
+          ),
         ),
-      ),
-      home: const EventHomePage(),
-    );
-  }
+        home: const EventHomePage(),
+        );
+    }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../local_notification_service/local_notification_service.dart';
 import '../view_models/event_view_model.dart';
 
 void showEditEventDialog(BuildContext context, EventViewModel eventViewModel, int index, String eventName, DateTime eventDate) {
@@ -51,6 +52,7 @@ void showEditEventDialog(BuildContext context, EventViewModel eventViewModel, in
             onPressed: () {
               if (updatedName.isNotEmpty) {
                 eventViewModel.editEvent(index, updatedName, selectedDate);
+                LocalNotificationService.showBasicNotification();
               }
               Navigator.of(context).pop();
             },
